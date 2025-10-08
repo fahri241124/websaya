@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahri Ahmad Subhakti - Website Pribadi Keren</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* --- SKEMA WARNA BARU: DARK MODE SENTUHAN BIRU LANGIT --- */
+
+        /* Pengaturan Dasar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Warna Background Utama: Abu-abu Gelap (Kesan Modern/Dark Mode) */
+            color: #E0E0E0; /* Warna Teks Utama: Putih Gading */
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Warna Aksen Keren */
+        :root {
+            --accent-color: #00BFFF; /* Biru Langit (Aksen Cerah) */
+            --text-color: #E0E0E0;
+            --card-bg: #1E1E1E; /* Background untuk Kotak/Card */
+        }
+
+        /* Header Profil */
+        .profile-header {
+            background-color: var(--card-bg);
+            padding: 40px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        .profile-pic-container {
+            display: inline-block;
+            border: 5px solid var(--accent-color);
+            border-radius: 50%;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #FFFFFF; /* Warna Nama: Putih Terang */
+            margin: 10px 0 5px 0;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            color: var(--accent-color);
+            margin: 0 0 20px 0;
+            font-weight: 400;
+        }
+
+        .bio {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1em;
+            color: #B0B0B0;
+        }
+
+        /* Link Sosial Media (Ikon) */
+        .social-links a {
+            color: #E0E0E0;
+            margin: 0 15px;
+            font-size: 1.8em;
+            transition: color 0.3s ease;
+        }
+
+        /* Efek Hover Keren */
+        .social-links a:hover {
+            color: var(--accent-color); /* Ikon bersinar dengan Biru Langit saat di-hover */
+        }
+
+        /* Konten Utama */
+        .content-section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            color: #E0E0E0;
+        }
+
+        /* --- KOLOM KOMENTAR SEDERHANA --- */
+        .comment-section {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            text-align: left;
+            background-color: #242424; /* Latar belakang kolom komentar: lebih gelap sedikit dari card */
+            border-radius: 8px;
+        }
+
+        .comment-section h3 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+        
+        /* WARNA KOLOM INPUT KOMENTAR */
+        .comment-form input[type="text"],
+        .comment-form textarea {
+            width: 98%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #555; /* Warna border gelap */
+            background-color: #333; /* Warna background input gelap */
+            color: #E0E0E0; /* Warna teks input terang */
+            border-radius: 5px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        
+        /* WARNA TOMBOL KOMENTAR */
+        .comment-form button {
+            background-color: var(--accent-color);
+            color: #121212; /* Warna teks tombol dibuat gelap agar kontras */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background-color: #009ACD; /* Biru yang sedikit lebih gelap saat di-hover */
+        }
+
+        .comments-list p {
+            background-color: var(--card-bg);
+            padding: 10px;
+            border-left: 5px solid var(--accent-color);
+            margin-top: 10px;
+            border-radius: 5px;
+            color: #E0E0E0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #B0B0B0;
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        /* Media Query untuk Responsif */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .bio {
+                font-size: 1em;
+            }
+
+            .social-links a {
+                font-size: 1.5em;
+                margin: 0 10px;
+            }
+        }
+        /* --- KODE CSS TAMBAHAN UNTUK BAGIAN KARYA (PORTFOLIO) --- */
+.portfolio-grid {
+    display: grid;
+    /* Membuat grid dengan 3 kolom di layar besar */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Jarak antar kartu */
+    margin-top: 30px;
+    text-align: left;
+}
+
+.portfolio-item {
+    background-color: #242424; /* Background kartu karya, sedikit lebih terang dari background utama */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px); /* Efek terangkat saat disentuh kursor */
+    box-shadow: 0 8px 15px rgba(0, 191, 255, 0.3); /* Bayangan bersinar dengan warna aksen */
+}
+
+.project-thumb {
+    width: 100%;
+    height: auto;
+    max-height: 180px; /* Batasan tinggi gambar agar seragam */
+    object-fit: cover; /* Memastikan gambar menutupi area tanpa terdistorsi */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.portfolio-item h4 {
+    color: #FFFFFF; /* Judul karya putih terang */
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+}
+
+.portfolio-item p {
+    color: #B0B0B0; /* Deskripsi abu-abu muda */
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--accent-color); /* Warna link Biru Langit */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent; /* Garis transparan awal */
+    transition: border-bottom 0.3s ease;
+}
+
+.project-link:hover {
+    border-bottom: 2px solid var(--accent-color); /* Garis Biru Langit saat di-hover */
+}
+
+/* Media Query untuk tata letak di HP */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        /* Di HP, ubah menjadi 1 kolom penuh */
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header class="profile-header">
+        <div class="profile-pic-container">
+            <img src="fahri.jpg" alt="Foto Profil Fahri Ahmad Subhakti" class="profile-pic">
+        </div>
+        
+        <h1>Fahri Ahmad Subhakti</h1>
+        <h2>Frontend Enthusiast & Digital Storyteller</h2>
+        <p class="bio">
+            Halo! Saya Fahri Ahmad Subhakti, seorang pengembang Website yang percaya bahwa setiap ide besar berawal dari secangkir kopi hangat dan koneksi yang tulus. Saya merancang pengalaman digital yang efisien dan memukau. Mari kita ciptakan Happy Era bersama!
+            </p>
+                <h3>"WEBSITE PRIBADI"</h3>
+
+        <div class="social-links">
+            <a href="https://www.tiktok.com/@fhri1._?_t=ZS-90NfihXjSFk&_r=1" target="_blank" aria-label="TikTok Fahri">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.instagram.com/fhriarsana_?igsh=MThscDdidmNxMml1OQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram Fahri">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/share/v/1A6UonZ3zo/?mibextid=wwXIfr" target="_blank" aria-label="Facebook Fahri">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="content-section">
+    <h2>Project Unggulan</h2>
+    <p>Jelajahi beberapa karya dan proyek terbaru saya di bidang Frontend Development dan Digital Storytelling.</p>
+
+    <section class="portfolio-grid">
+        
+        <div class="portfolio-item">
+            <img src="download (1).jpg" alt="Project Website E-Commerce" class="project-thumb">
+            <h4>Project E-Commerce Modern</h4>
+            <p>Website toko online berbasis produk digital dengan tampilan minimalis dan performa loading super cepat. (HTML, CSS, JavaScript).</p>
+            <a href="https://lynk.id/fahri24_" target="_blank" class="project-link">Lihat Proyek &rarr;</a>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="download.png" alt="Project Desain UI/UX App" class="project-thumb">
+            <h4>Pendaftaran PMB Moderen</h4>
+            <p>Website pendaftaran pmb buat daftar kuliah pembuatan dengan script HTML,CSS.</p>
+            <a href=" https://fahri241124.github.io/web_pemrograman_internet/" target="_blank" class="project-link">Lihat Proyek &rarr;</a>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="foto.jpg" alt="Project Blog Pribadi" class="project-thumb">
+            <h4>Personal Blog & Storytelling</h4>
+            <p>Platform blog pribadi dengan fokus pada pengembangan web yang nyaman dilihat dan responsif di segala perangkat.</p>
+            <a href="[LINK DEMO KARYA 3]" target="_blank" class="project-link">Lihat Proyek &rarr;</a>
+        </div>
+
+    </section>
+    </main>
+
+    <section class="comment-section">
+        <hr>
+        <h3>Tinggalkan Jejak!</h3>
+        <form class="comment-form">
+            <input type="text" placeholder="Nama Anda" required>
+            <textarea placeholder="Komentar Anda..." rows="4" required></textarea>
+            <button type="submit">Kirim Komentar</button>
+        </form>
+        
+        <div class="comments-list">
+            <p><strong>Pengunjung 1:</strong> "Desainnya keren banget, Fahri! Inspiratif!"</p>
+            <p><strong>Pengunjung 2:</strong> "Suka dengan bio-nya, sangat personal."</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Fahri Ahmad Subhakti. All rights reserved.</p>
+    </footer>
+</body>
+</html>
