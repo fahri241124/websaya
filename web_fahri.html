@@ -247,6 +247,73 @@
         grid-template-columns: 1fr;
     }
 }
+/* --- KODE CSS TAMBAHAN: EFEK GLOW SHADOW MERAH+UNGU --- */
+
+/* Efek Glow pada Foto Profil */
+.profile-pic-container {
+    /* Tambahkan efek box-shadow baru di sini */
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.7), /* Merah terang */
+                0 0 30px rgba(128, 0, 255, 0.5); /* Ungu */
+    transition: box-shadow 0.3s ease-in-out; /* Animasi halus */
+}
+
+.profile-pic-container:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.9), /* Lebih terang saat hover */
+                0 0 40px rgba(128, 0, 255, 0.7);
+}
+
+/* Efek Glow pada Kartu Karya (Portfolio Items) */
+.portfolio-item {
+    /* Sudah ada box-shadow di sini, kita timpa atau tambahkan */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), /* Shadow dasar yang sudah ada */
+                0 0 10px rgba(255, 0, 128, 0.3), /* Merah glow */
+                0 0 20px rgba(128, 0, 255, 0.2); /* Ungu glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7), /* Shadow dasar lebih kuat */
+                0 0 15px rgba(255, 0, 128, 0.6), /* Merah glow lebih kuat */
+                0 0 30px rgba(128, 0, 255, 0.5); /* Ungu glow lebih kuat */
+}
+
+/* Efek Glow pada Kotak Komentar */
+.comment-section {
+    /* Sudah ada box-shadow di sini, kita timpa atau tambahkan */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), /* Shadow dasar yang sudah ada */
+                0 0 10px rgba(255, 0, 128, 0.3), /* Merah glow */
+                0 0 20px rgba(128, 0, 255, 0.2); /* Ungu glow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.comment-section:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6), /* Shadow dasar lebih kuat */
+                0 0 15px rgba(255, 0, 128, 0.6), /* Merah glow lebih kuat */
+                0 0 30px rgba(128, 0, 255, 0.5); /* Ungu glow lebih kuat */
+}
+
+/* Efek Glow pada Input dan Textarea Komentar */
+.comment-form input[type="text"]:focus,
+.comment-form textarea:focus {
+    outline: none; /* Hapus outline default browser */
+    border-color: rgba(255, 0, 128, 0.7); /* Border berubah warna saat focus */
+    box-shadow: 0 0 8px rgba(255, 0, 128, 0.4), /* Merah glow saat focus */
+                0 0 15px rgba(128, 0, 255, 0.3); /* Ungu glow saat focus */
+}
+
+/* Efek Glow pada Tombol Komentar */
+.comment-form button {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Shadow default tombol */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #009ACD; /* Warna hover yang sudah ada */
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.7), /* Biru terang menyala */
+                0 0 15px rgba(255, 0, 128, 0.5), /* Merah */
+                0 0 25px rgba(128, 0, 255, 0.4); /* Ungu */
+}
     </style>
 </head>
 <body>
